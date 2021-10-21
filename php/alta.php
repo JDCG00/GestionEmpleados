@@ -1,5 +1,6 @@
 <?php
-    require("conexion.php")
+    require("conexion.php");
+    $conexion = new mysqli(SERVIDOR, USUARIO, PW, BD);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -21,5 +22,11 @@
             <input type="submit" name="enviar" value="Enviar"><br><br>
             <a href="../index.php"><input type="button" name="volver" value="Volver"></a>
         </form>
+        <?php
+            if ($_POST) {
+                $consulta = "INSERT INTO  empleados (DNI, Nombre, Correo, Tlfn) VALUES('".$_POST['dni']."','".$_POST['nombre']."','".$_POST['correo']."','".$_POST['telefono']."');";
+                $resultado = $conexion->query($consulta);
+            }            
+        ?>
     </body>
 </html>

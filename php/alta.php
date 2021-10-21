@@ -18,7 +18,7 @@
             <label for="correo">Correo: </label>
             <input type="text " name="correo"><br><br>
             <label for="telefono">Teléfono: </label>
-            <input type="number" name="telefono"><br><br>
+            <input type="text" name="telefono"><br><br>
             <input type="submit" name="enviar" value="Enviar"><br><br>
             <a href="../index.php"><input type="button" name="volver" value="Volver"></a>
         </form>
@@ -26,7 +26,7 @@
             if ($_POST) {
                 $consulta = "INSERT INTO  empleados (DNI, Nombre, Correo, Tlfn) VALUES('".$_POST['dni']."','".$_POST['nombre']."','".$_POST['correo']."','".$_POST['telefono']."');";
                 $resultado = $conexion->query($consulta);
-            }            
+            }                      
         ?>
     </body>
 </html>

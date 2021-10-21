@@ -21,22 +21,21 @@
         <title>Consultar</title>
     </head>
     <body>
-        <?php
-            
-                if(!$_POST){
-                    formulario1();
-                }else{                    
-                    $consulta = "SELECT * FROM empleados WHERE DNI = '".$_POST['dni']."';";
-                    $resultado = $conexion->query($consulta);
-                    while ($fila = $resultado->fetch_assoc()) {
-                        echo 'IdEmpleados: ' .$fila['IdEmpleados']. '<br/>';
-                        echo 'DNI: ' .$fila['DNI']. '<br/>';
-                        echo 'Nombre: ' .$fila['Nombre']. '<br/>';
-                        echo 'Correo: ' .$fila['Correo']. '<br/>';
-                        echo 'Teléfono: ' .$fila['Tlfn']. '<br/>';
-                    }
+        <?php            
+            if(!$_POST){
+                formulario1();
+            }else{                    
+                $consulta = "SELECT * FROM empleados WHERE DNI = '".$_POST['dni']."';";
+                $resultado = $conexion->query($consulta);
+                while ($fila = $resultado->fetch_assoc()) {
+                    echo 'IdEmpleados: ' .$fila['IdEmpleados']. '<br/>';
+                    echo 'DNI: ' .$fila['DNI']. '<br/>';
+                    echo 'Nombre: ' .$fila['Nombre']. '<br/>';
+                    echo 'Correo: ' .$fila['Correo']. '<br/>';
+                    echo 'Teléfono: ' .$fila['Tlfn']. '<br/> <br/>';
                 }
-                     
+                echo '<a href="consultar.php"><input type="button" name="volver" value="Volver"></a>';
+            }                     
         ?>
     </body>
 </html>

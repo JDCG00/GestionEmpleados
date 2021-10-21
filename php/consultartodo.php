@@ -9,6 +9,7 @@
         echo 'DNI: ' .$fila['DNI']. '<br/>';
         echo 'Nombre: ' .$fila['Nombre']. '<br/>';
         echo 'Correo: ' .$fila['Correo']. '<br/>';
-        echo 'Teléfono: ' .$fila['Tlfn']. '<br/>';
+        echo 'Teléfono: ' .$fila['Tlfn']. '<br/><br/>';
     }
-    ?>
+    echo '<a href="../index.php"><input type="button" name="volver" value="Volver"></a>';
+?>

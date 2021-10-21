@@ -9,6 +9,7 @@
                 <input name="dni" type="text"><br><br>
                 <input type="submit" name="enviar" value="Enviar"><br><br>
                 <a href="../index.php"><input type="button" name="volver" value="Volver"></a>
+                <a href="consultartodo.php"><input type="button" name="consultartodo" value="Consultar todo"></a>
             </form>
         ';
     }
@@ -24,9 +25,8 @@
             
                 if(!$_POST){
                     formulario1();
-                }else{
-                    $consulta = "SELECT * FROM empleados ";
-                    //$consulta = "SELECT * FROM empleados WHERE DNI = '".$_POST['dni']."';";
+                }else{                    
+                    $consulta = "SELECT * FROM empleados WHERE DNI = '".$_POST['dni']."';";
                     $resultado = $conexion->query($consulta);
                     while ($fila = $resultado->fetch_assoc()) {
                         echo 'IdEmpleados: ' .$fila['IdEmpleados']. '<br/>';

@@ -1,22 +1,15 @@
 <?php
-    /*
-    require_once('conexion.php');
-    class Consultar extends Conexion
-    {
-        public $nombreserver = '127.0.0.1';
-        public $usuario = 'root';
-        public $contrasenia = '';
-        public $basedatos = 'bdempleados';
-        public $dni = $_POST['DNI'];
-
-        public $conexion = mysqli_connect($nombreserver, $usuario, $contrasenia, $basedatos);
-
-        public $consulta = 'SELECT * FROM empleados WHERE DNI = '.$dni;
-
-
-        public $resultado = mysqli_query($conexion, $consulta);
+    function formulario1(){
+        echo '
+            <h1>Consultar</h1>
+            <form action="consultar.php" method="post">
+                <label for="dni">Introduzca DNI: </label>
+                <input name="dni" type="text"><br><br>
+                <input type="submit" name="enviar" value="Enviar"><br><br>
+                <a href="../index.php"><input type="button" name="volver" value="Volver"></a>
+            </form>
+        ';
     }
-    */
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -25,11 +18,12 @@
         <title>Consultar</title>
     </head>
     <body>
-        <h1>Consultar</h1>
-        <form action="consultar.php" method="post">
-            <label for="dni">Introduzca DNI: </label>
-            <input name="dni" type="text"><br><br>
-            <input type="submit" name="enviar">
-        </form>
+        <?php
+            if(!$_POST){
+                formulario1();
+            }else{
+
+            }
+        ?>
     </body>
 </html>

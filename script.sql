@@ -1,3 +1,4 @@
+CREATE DATABASE bdempleados;
 USE bdempleados;
 CREATE TABLE Empleados(
     IdEmpleados INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,

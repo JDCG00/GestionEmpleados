@@ -5,5 +5,5 @@ CREATE TABLE Empleados(
     DNI CHAR(9) UNIQUE NOT NULL,
     Nombre VARCHAR(40) NOT NULL,
     Correo VARCHAR(70) NOT NULL,
-    Tlfn int(9) NOT NULL
+    Tlfn char(9) NOT NULL
 )

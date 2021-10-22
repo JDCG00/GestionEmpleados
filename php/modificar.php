@@ -11,28 +11,22 @@
 </head>
 <body>
     <h1>Modificar</h1>
-        <form action="modificar.php" method="post">
-            <label for="modificar">Usuario que desea eliminar: </label>
-            <select>
-                <?php
-                    $consulta = "SELECT idEmpleados, Nombre, DNI FROM empleados ";
-                    $resultado = $conexion->query($consulta);
-                    while ($fila = $resultado->fetch_assoc()) {
-                        $id = $fila['idEmpleados'];
-                        $nombre = $fila['Nombre'];
-                        $dni = $fila['DNI'];
-                        echo "<option value=$id>$nombre con DNI: $dni</option>";
-                    }
-                ?>
-            </select>
-            <input type="submit" name="borrar" value="Borrar"><br><br>
+    <form action="modificar2.php" method="post">
+        <label for="modificar">Usuario que desea modificar: </label>
+        <select>
             <?php
-                if ($_POST) {
-                    $consulta2 = "DELETE FROM empleados WHERE idEmpleados = '".$id."'";
-                    $resultado2 = $conexion->query($consulta2);
+                $consulta = "SELECT DNI, Nombre, Correo, Tlfn FROM empleados ";
+                $resultado = $conexion->query($consulta);
+                while ($fila = $resultado->fetch_assoc()) {
+                    $id = $fila['idEmpleados'];
+                    $nombre = $fila['Nombre'];
+                    $dni = $fila['DNI'];
+                    echo "<option value='".$id."'>$nombre con DNI: '".$dni."'</option>";
                 }
             ?>
-            <a href="../index.php"><input type="button" name="volver" value="Volver"></a>
+        </select>
+        <a href="modificar2.php?nombre='.fila['Nombre'].'"><input type="submit" name="modificar" value="Modificar"></a><br><br>
+        <a href="../index.php"><input type="button" name="volver" value="Volver"></a>
     </form>   
 </body>
 </html>

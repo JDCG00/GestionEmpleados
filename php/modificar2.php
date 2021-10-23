@@ -15,7 +15,7 @@
             $consulta = "SELECT Nombre, DNI FROM empleados ";
             $resultado = $conexion->query($consulta);
             $fila = $resultado->fetch_assoc();
-            echo  $fila['Nombre']. ' con DNI: ' .$fila['DNI'];
+            echo  $fila['Nombre']. ' con DNI: '.$fila['DNI'];
         ?>
     </h1>
     <form action="modificar2.php" method="post">

@@ -21,12 +21,15 @@
                     $id = $fila['idEmpleados'];
                     $nombre = $fila['Nombre'];
                     $dni = $fila['DNI'];
-                    echo "<option value='".$id."'>$nombre con DNI: '".$dni."'</option>";
+                    echo "<option value=".$id.">".$nombre." con DNI: ".$dni."</option>";
                 }
             ?>
         </select>
-        <a href="modificar2.php?nombre='.fila['Nombre'].'"><input type="submit" name="modificar" value="Modificar"></a><br><br>
+        <?php
+            echo '<a href="modificar2.php?nombre ='.$fila['Nombre'].'"><input type="submit" name="modificar" value="Modificar"></a>';
+        ?>
+        <br><br>
         <a href="../index.php"><input type="button" name="volver" value="Volver"></a>
-    </form>   
+    </form>
 </body>
 </html>

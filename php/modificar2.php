@@ -12,14 +12,17 @@
 <body>
     <h1>Modificar
         <?php
-            $consulta = "SELECT Nombre, DNI FROM empleados ";
+            $consulta = "SELECT * FROM empleados WHERE IdEmpleados='".$_GET['id']."';";
             $resultado = $conexion->query($consulta);
             $fila = $resultado->fetch_assoc();
             echo  $fila['Nombre']. ' con DNI: '.$fila['DNI'];
         ?>
     </h1>
     <form action="modificar2.php" method="post">
-    <label for="dni">DNI: </label>
+        <?php
+            echo '<input type="hidden" name="id" value="'.$_GET['id'].'">'
+        ?>        
+        <label for="dni">DNI: </label>
         <input type="text" name="dni"><br><br>
         <label for="nombre">Nombre: </label>
         <input type="text" name="nombre"><br><br>
@@ -29,6 +32,14 @@
         <input type="text" name="telefono"><br><br>
         <input type="submit" name="modificar" value="Modificar"><br><br>
         <a href="../index.php"><input type="button" name="volver" value="Volver"></a>
-    </form>   
+    </form>
+    <?php
+        if ($_POST) {
+            $consulta2 = "UPDATE empleados SET DNI='".$_POST['dni']."', Nombre='".$_POST['nombre']."', Correo='".$_POST['correo']."', Tlfn='".$_POST['telefono']."' WHERE IdEmpleados='".$_POST['id']."';";
+            $resultado2 = $conexion->query($consulta2);
+            
+        }
+
+    ?>  
 </body>
 </html>

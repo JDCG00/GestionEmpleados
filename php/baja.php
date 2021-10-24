@@ -15,10 +15,10 @@
         <label for="baja">Usuario que desea eliminar: </label>
         <select>
             <?php
-                $consulta = "SELECT idEmpleados, Nombre, DNI FROM empleados ";
+                $consulta = "SELECT IdEmpleados, Nombre, DNI FROM empleados ";
                 $resultado = $conexion->query($consulta);
                 while ($fila = $resultado->fetch_assoc()) {
-                    $id = $fila['idEmpleados'];
+                    $id = $fila['IdEmpleados'];
                     $nombre = $fila['Nombre'];
                     $dni = $fila['DNI'];
                     echo "<option value=$id>$nombre con DNI: $dni</option>";
@@ -28,7 +28,7 @@
         <input type="submit" name="borrar" value="Borrar"><br><br>
         <?php
             if ($_POST) {
-                $consulta2 = "DELETE FROM empleados WHERE idEmpleados = '".$id."'";
+                $consulta2 = "DELETE FROM empleados WHERE IdEmpleados = '".$id."'";
                 $resultado2 = $conexion->query($consulta2);
             }
         ?>

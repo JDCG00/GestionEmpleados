@@ -7,10 +7,10 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Modificar</title>
+    <title>Baja</title>
 </head>
 <body>
-    <h1>Modificar
+    <h1>Desea borrar a :
         <?php
             $consulta = "SELECT * FROM empleados WHERE IdEmpleados='".$_GET['id']."';";
             $resultado = $conexion->query($consulta);

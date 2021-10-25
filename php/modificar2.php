@@ -37,10 +37,8 @@
         if ($_POST) {
             $consulta2 = "UPDATE empleados SET DNI='".$_POST['dni']."', Nombre='".$_POST['nombre']."', Correo='".$_POST['correo']."', Tlfn='".$_POST['telefono']."' WHERE IdEmpleados='".$_POST['id']."';";
             $resultado2 = $conexion->query($consulta2);
-            ob_start();
             header("Location: modificar.php ");
         }
-
     ?>  
 </body>
 </html>

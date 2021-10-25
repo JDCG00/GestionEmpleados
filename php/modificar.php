@@ -24,7 +24,6 @@
                 echo '<a href="modificar2.php?id='.$id.'"><input type="button" name="modificar" value="Modificar"></a><br><br>';
             }
         ?>
-        <br><br>
         <a href="../index.php"><input type="button" name="volver" value="Volver"></a>
     </form>
 </body>
